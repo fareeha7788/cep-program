@@ -1,0 +1,15 @@
+{
+  "name": "fnf-bdd-playwright",
+  "version": "1.0.0",
+  "description": "BDD tests (CucumberJS + Playwright) for FnF subscription happy path",
+  "private": true,
+  "scripts": {
+    "test:subscribe-flow": "powershell -ExecutionPolicy Bypass -File ./run-subscribe-flow.ps1",
+    "test:run": "powershell -Command \"$env:HEADLESS='false'; npx cucumber-js features/token_cookie_login.feature --require ./support/world.js --require ./support/hooks.js --require ./steps/**/*.js --format progress --parallel 1\""
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.0.0",
+    "cross-env": "^10.1.0",
+    "playwright": "^1.48.2"
+  }
+}
